@@ -73,7 +73,9 @@ class CurrentRunVC: LocationVC {
     }
 
     func calculatePace(time seconds: Int, miles: Double) -> String{
-        pace = Int(Double(seconds) / miles)
+        if(miles > 0) {
+            pace = Int(Double(seconds) / miles)
+        }
         return pace.formatTimeDurationToString()
     }
 
